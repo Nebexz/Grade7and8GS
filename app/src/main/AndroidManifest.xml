@@ -11,7 +11,9 @@
         android:theme="@style/Theme.GeneralScience7And8">
         <activity
             android:name=".MainActivity2"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>*
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,7 +25,10 @@
         </activity>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-7070396777212212~9701163067"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

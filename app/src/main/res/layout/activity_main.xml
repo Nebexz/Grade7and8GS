@@ -13,28 +13,28 @@
 
         <ImageView
             android:id="@+id/imageButton"
-            android:layout_width="120dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_32sdp"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
 
-            app:srcCompat="@drawable/gs7" />
+            app:srcCompat="@drawable/gs7low" />
 
         <ImageView
             android:id="@+id/imageButton2"
-            android:layout_width="120dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_48sdp"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/g7text"
 
-            app:srcCompat="@drawable/gs8" />
+            app:srcCompat="@drawable/gs8low" />
 
         <TextView
             android:id="@+id/g7text"
@@ -42,7 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="Grade 7 GS"
-            app:fontFamily="sans-serif-black"
+            android:textcolor="black"
+            app:fontFamily="@font/lato_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageButton" />
@@ -52,9 +53,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-
+            android:textcolor="black"
             android:text="Grade 8 GS"
-            app:fontFamily="sans-serif-black"
+            app:fontFamily="@font/lato_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageButton2" />

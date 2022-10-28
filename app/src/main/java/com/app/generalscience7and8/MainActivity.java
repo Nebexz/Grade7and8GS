@@ -8,6 +8,8 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -34,7 +36,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111";
+    private static final String AD_UNIT_ID = "ca-app-pub-7070396777212212/3875789613";
     private AdView adView;
     private FrameLayout adContainerView;
     private boolean initialLayoutComplete = false;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageView button = findViewById(R.id.imageButton);
         ImageView button1 = findViewById(R.id.imageButton2);
-        AdView adView = new AdView(this);
+        adView = new AdView(this);
 
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -96,26 +98,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-        // Determine the screen width (less decorations) to use for the ad width.
+    // Determine the screen width (less decorations) to use for the ad width.
 
-    @RequiresApi(api = Build.VERSION_CODES.R)
-    public AdSize getAdSize() {
-        WindowMetrics windowMetrics = getWindowManager().getCurrentWindowMetrics();
-        Rect bounds = windowMetrics.getBounds();
+    private AdSize getAdSize() {
+        // Determine the screen width (less decorations) to use for the ad width.
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density = outMetrics.density;
 
         float adWidthPixels = adContainerView.getWidth();
 
         // If the ad hasn't been laid out, default to the full screen width.
-        if (adWidthPixels == 0f) {
-            adWidthPixels = bounds.width();
+        if (adWidthPixels == 0) {
+            adWidthPixels = outMetrics.widthPixels;
         }
 
-        float density = getResources().getDisplayMetrics().density;
-        int adWidth = (int) (adWidthPixels / density);
 
+        int adWidth = (int) (adWidthPixels / density);
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
     }
-
 
 
 
@@ -168,5 +171,32 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
+
 
 }
