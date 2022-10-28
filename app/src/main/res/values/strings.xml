@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">General Science 7 and 8</string>
+    <string name="PrivacyPolicy">Privacy Policy</string>
+    <string-array name="books">
+        <item>Grade 7 English</item>
+        <item>Grade 8 English</item>
+    </string-array>
+</resources>
