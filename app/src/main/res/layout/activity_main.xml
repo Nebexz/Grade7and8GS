@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="Grade 7 GS"
-            android:textcolor="black"
+
             app:fontFamily="@font/lato_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textcolor="black"
+
             android:text="Grade 8 GS"
             app:fontFamily="@font/lato_black"
             app:layout_constraintEnd_toEndOf="parent"

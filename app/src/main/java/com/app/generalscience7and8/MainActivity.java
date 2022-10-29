@@ -138,10 +138,10 @@ public class MainActivity extends AppCompatActivity {
             sharingIntent.setType("text/plain");
 
             // Body of the content
-            String shareBody = "https://play.google.com/store/apps/details?id=com.app.generalsciencegrade7and8";
+            String shareBody = "https://play.google.com/store/apps/details?id=com.app.grade";
 
             // subject of the content. you can share anything
-            String shareSubject = "Hey, I'm using Grade 7 and 8 Ethiopian English Textbook download it on Playstore";
+            String shareSubject = "Hey, I'm using Grade 7 and 8 General Science Textbook download it on Playstore";
 
             // passing body of the content
             sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
